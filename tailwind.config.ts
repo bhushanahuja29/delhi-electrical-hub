@@ -57,6 +57,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        trust: {
+          gold: "hsl(var(--trust-gold))",
+        },
+        brand: {
+          blue: "hsl(var(--brand-blue))",
+        },
+      },
+      boxShadow: {
+        soft: "var(--shadow-soft)",
+        card: "var(--shadow-card)",
+        elevated: "var(--shadow-elevated)",
       },
       borderRadius: {
         lg: "var(--radius)",
