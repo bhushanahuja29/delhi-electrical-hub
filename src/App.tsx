@@ -14,6 +14,14 @@ import ComparePage from "./pages/ComparePage";
 import BrandsListPage from "./pages/BrandsListPage";
 import CategoriesListPage from "./pages/CategoriesListPage";
 import NotFound from "./pages/NotFound";
+import AdminLayout from "./pages/admin/AdminLayout";
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminProducts from "./pages/admin/AdminProducts";
+import AdminCategories from "./pages/admin/AdminCategories";
+import AdminBrands from "./pages/admin/AdminBrands";
+import AdminImport from "./pages/admin/AdminImport";
+import AdminInquiries from "./pages/admin/AdminInquiries";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +42,18 @@ const App = () => (
               <Route path="/product/:id" element={<ProductPage />} />
               <Route path="/shortlist" element={<ShortlistPage />} />
               <Route path="/compare" element={<ComparePage />} />
+              
+              {/* Admin Routes */}
+              <Route path="/admin/login" element={<AdminLogin />} />
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<AdminDashboard />} />
+                <Route path="products" element={<AdminProducts />} />
+                <Route path="categories" element={<AdminCategories />} />
+                <Route path="brands" element={<AdminBrands />} />
+                <Route path="import" element={<AdminImport />} />
+                <Route path="inquiries" element={<AdminInquiries />} />
+              </Route>
+              
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
